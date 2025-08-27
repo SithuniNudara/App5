@@ -12,10 +12,10 @@ export default function App() {
       <Text style={styles.title}>Contact Book</Text>
       <Text style={styles.subTitle}>Create a New Contact</Text>
 
-      <TextInput style={styles.input} placeholder='Enter Mobile Number' onChangeText={setMobile} />
-      <TextInput style={styles.input} placeholder='Enter First Name' onChangeText={setFirstName}/>
-      <TextInput style={styles.input} placeholder='Enter Last Name' onChangeText={setLastName}/>
-      <TextInput style={styles.input} placeholder='Enter Company Name' onChangeText={setCompanyName} />
+      <TextInput style={styles.input} placeholder='Enter Mobile Number' onChangeText={setMobile} inputMode='tel'/>
+      <TextInput style={styles.input} placeholder='Enter First Name' onChangeText={setFirstName} inputMode='text'/>
+      <TextInput style={styles.input} placeholder='Enter Last Name' onChangeText={setLastName} inputMode='text'/>
+      <TextInput style={styles.input} placeholder='Enter Company Name' onChangeText={setCompanyName} inputMode='text'/>
 
       <Button title='Save New Contact' onPress={async () => {
 
@@ -41,6 +41,7 @@ export default function App() {
 
         if (response.ok) {
           Alert.alert("Success!");
+
 
         } else {
           Alert.alert("Error!");
